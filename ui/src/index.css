@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+@theme {
+  --color-paper: #f4efe3;
+  --color-paper-2: #ece4d2;
+  --color-paper-3: #e2d8c0;
+  --color-ink: #1f1a14;
+  --color-ink-2: #4a4236;
+  --color-ink-3: #837a6a;
+  --color-vermilion: #c4481c;
+  --color-vermilion-2: #a13a15;
+  --color-sage: #5f6f55;
+  --color-gold: #b98a2e;
+  --font-display: "Fraunces", serif;
+  --font-sans: "Outfit", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-ink);
+  background-color: var(--color-paper);
+  background-image:
+    radial-gradient(1200px 800px at 85% -10%, rgba(196, 72, 28, 0.08), transparent 60%),
+    radial-gradient(900px 700px at -10% 110%, rgba(95, 111, 85, 0.12), transparent 55%),
+    repeating-linear-gradient(
+      45deg,
+      rgba(31, 26, 20, 0.015) 0,
+      rgba(31, 26, 20, 0.015) 1px,
+      transparent 1px,
+      transparent 12px
+    );
+  background-attachment: fixed;
+}
+
+::selection {
+  background: var(--color-vermilion);
+  color: var(--color-paper);
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-rise-in {
+  animation: rise-in 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.animate-slide-in {
+  animation: slide-in 0.35s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.mail-body a {
+  color: var(--color-vermilion);
+  text-decoration: underline;
+}

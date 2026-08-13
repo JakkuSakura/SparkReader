@@ -1,0 +1,64 @@
+[build-system]
+requires = ["uv-build"]
+build-backend = "uv_build"
+
+[project]
+name = "spark-reader"
+version = "0.1.0"
+description = "Read-only FastAPI server that searches the Spark Desktop local SQLite mail cache"
+authors = [{ name = "JakkuSakura" }]
+readme = "README.md"
+license = { text = "Proprietary" }
+requires-python = ">=3.10"
+dependencies = [
+    "fastapi>=0.115",
+    "uvicorn[standard]>=0.30",
+]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.9",
+    "pyright>=1.1",
+    "pytest>=8.0",
+    "httpx>=0.27",
+]
+
+[project.scripts]
+spark-reader = "spark_reader.main:main"
+
+[tool.uv]
+
+[tool.ruff]
+line-length = 99
+target-version = "py310"
+fix = true
+
+[tool.ruff.lint]
+select = [
+    "E",
+    "F",
+    "W",
+    "B",
+    "I",
+    "RUF100",
+    "PGH004",
+    "UP",
+    "C4",
+    "SIM201",
+    "SIM202",
+    "RET501",
+    "RET502",
+]
+ignore = [
+    "B007",
+    "B011",
+    "B023",
+    "E402",
+    "E501",
+    "E721",
+    "E731",
+    "E741",
+    "UP031",
+    "UP032",
+    "C416",
+]
