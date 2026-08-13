@@ -10,6 +10,13 @@ export default function Sidebar(props: Props) {
   return (
     <aside class="flex h-full w-64 shrink-0 flex-col gap-6 overflow-y-auto border-r border-ink/10 bg-paper-2/60 p-5">
       <div>
+        <h1 class="font-display text-2xl font-bold tracking-tight text-ink">
+          Spark<span class="text-vermilion">Reader</span>
+        </h1>
+        <p class="font-mono text-xs text-ink-3">local mail archive</p>
+      </div>
+
+      <div>
         <h2 class="mb-3 font-mono text-xs font-medium uppercase tracking-widest text-ink-3">
           Accounts
         </h2>

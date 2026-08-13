@@ -140,13 +140,7 @@ export default function App() {
       />
 
       <main class="flex min-w-0 flex-1 flex-col">
-        <header class="flex items-start justify-between gap-4 border-b border-ink/10 px-6 py-4">
-          <div class="shrink-0">
-            <h1 class="font-display text-2xl font-bold tracking-tight text-ink">
-              Spark<span class="text-vermilion">Reader</span>
-            </h1>
-            <p class="font-mono text-xs text-ink-3">local mail archive</p>
-          </div>
+        <header class="flex items-center gap-4 border-b border-ink/10 px-6 py-4">
           <div class="min-w-0 flex-1">
             <SearchBar
               params={params()}

@@ -74,9 +74,11 @@ export default function MessageDetail(props: Props) {
             </pre>
           </Show>
           <Show when={!showRaw()}>
-            <div
-              class="mail-body text-sm leading-relaxed text-ink"
-              innerHTML={props.message.bodyHtml!}
+            <iframe
+              class="mail-body h-full min-h-[60vh] w-full rounded-lg border border-ink/10 bg-white"
+              srcdoc={props.message.bodyHtml!}
+              sandbox=""
+              title="message body"
             />
           </Show>
         </Show>
